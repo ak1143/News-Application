@@ -1,5 +1,5 @@
 
-const useNews = async (category, page, pageSize) => {
+const getNews = async (category, page, pageSize) => {
 
    try {
     // const [data, setData]=useState({});
@@ -17,4 +17,4 @@ const useNews = async (category, page, pageSize) => {
    }   
 }
 
-export default useNews;
+export default getNews;

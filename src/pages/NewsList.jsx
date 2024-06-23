@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import FirstPostCard from "../components/PostCard/FirstPostCard";
 import Spinner from "../components/Spinner/Spinner.jsx";
+import getNews from "../api/getNews.js"
 
 export default function NewsList( {category} ){
 
@@ -14,7 +15,7 @@ export default function NewsList( {category} ){
             setLoading(true);
             const data= await getNews(category,page,pageSize);
             setNews(data?.articles);
-            setLoading(false);
+            // setLoading(false);
 
         } catch (error) {
             setLoading(false);
@@ -35,6 +36,10 @@ export default function NewsList( {category} ){
         setPage(page + 1);
         await fetchNews(page + 1);
     };
+
+    useEffect(() => {
+      fetchNews(page);
+    }, [page]);
 
     return (
         <div className="w-full flex flex-col items-center bg-gray-900 text-white pt-5 ">
