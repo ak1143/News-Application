@@ -1,9 +1,8 @@
 import { Outlet } from 'react-router-dom'
-import {Header,Footer} from './index' 
+import { Header, Footer } from './index' 
 
 function App() {
   
-
   return (
     <>
       <div className='w-full block'>
