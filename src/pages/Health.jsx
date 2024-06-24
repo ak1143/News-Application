@@ -1,12 +1,11 @@
-import React, { useState } from "react"
+import React from "react";
 import NewsList from "./NewsList"
 
-
-export default function Home(){
+export default function Health(){
 
     return(
         <div style={{ paddingLeft: '150px', paddingRight: '150px'}}>
-            <NewsList category="general" />
+            <NewsList category="health" />
         </div>
     )
 }

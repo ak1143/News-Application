@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import FirstPostCard from "../components/PostCard/FirstPostCard";
 import Spinner from "../components/Spinner/Spinner.jsx";
 import getNews from "../api/getNews.js";
 import SecondPostCard from "../components/PostCard/SecondPostCard.jsx";
@@ -44,20 +43,15 @@ export default function NewsList({ category }) {
     <div className="w-full flex flex-col items-center bg-gray-900 text-white">
       {!loading && news.length > 0 ? (
         <>
-          <div className="w-full grid gap-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 border-none">
-              {/* Conditional rendering based on category */}
-              {category === "general" && news.length > 0 ? (
-                <FirstPostCard article={news[0]} />
-              ) : (
-                news.map((article, i) => (
-                  <div className="col-md-4" key={i}>
-                    <SecondPostCard article={article} />
-                  </div>
-                ))
-              )}
+          <div className="w-full grid gap-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 border-none ">
+          <div className="row">
+          {news?.map((article, i) => (
+            <div className="col-md-4 my-4" key={i}>
+              <SecondPostCard article={article} />
+            </div>
+          ))}
           </div>
-
-
+          </div>
           <div className="w-3/4 flex mx-auto">
             {page > 1 && (
               <button
