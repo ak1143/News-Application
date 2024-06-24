@@ -43,7 +43,7 @@ export default function Footer() {
             <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
               <h6 className="text-uppercase fw-bold mb-4">
                 <FontAwesomeIcon icon={faGem} className="me-3" />
-                Company name
+                News
               </h6>
               <p>
                 Here you can use rows and columns to organize your footer content. Lorem ipsum
@@ -54,18 +54,18 @@ export default function Footer() {
 
             {/* Grid column */}
             <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-              <h6 className="text-uppercase fw-bold mb-4">Products</h6>
+              <h6 className="text-uppercase fw-bold mb-4">Categories</h6>
               <p>
-                <a href="#!" className="text-reset">Angular</a>
+                <a href="/business" className="text-reset">Business</a>
               </p>
               <p>
-                <a href="#!" className="text-reset">React</a>
+                <a href="/technology" className="text-reset">Technology</a>
               </p>
               <p>
-                <a href="#!" className="text-reset">Vue</a>
+                <a href="/sport" className="text-reset">Sport</a>
               </p>
               <p>
-                <a href="#!" className="text-reset">Laravel</a>
+                <a href="/health" className="text-reset">Health</a>
               </p>
             </div>
             {/* Grid column */}
@@ -96,8 +96,8 @@ export default function Footer() {
                 <FontAwesomeIcon icon={faEnvelope} className="me-3" />
                 info@example.com
               </p>
-              <p><FontAwesomeIcon icon={faPhone} className="me-3" /> + 01 234 567 88</p>
-              <p><FontAwesomeIcon icon={faPrint} className="me-3" /> + 01 234 567 89</p>
+              <p><FontAwesomeIcon icon={faPhone} className="me-3" /> +9284760643</p>
+              <p><FontAwesomeIcon icon={faPrint} className="me-3" /> +9284760643</p>
             </div>
             {/* Grid column */}
           </div>
@@ -107,7 +107,7 @@ export default function Footer() {
       {/* Copyright */}
       <div className="text-center p-4" style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}>
         © 2024 Copyright:
-        <a className="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+        <a className="text-reset fw-bold" href="#!">AkNews</a>
       </div>
     </footer>
   );

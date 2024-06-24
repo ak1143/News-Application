@@ -40,7 +40,7 @@ export default function NewsList({ category }) {
   }, [page, category]); // Include category in dependencies to fetch new news when category changes
 
   return (
-    <div className="w-full flex flex-col items-center bg-gray-900 text-white">
+    <div className="w-full flex flex-col justify-center items-center bg-gray-900 text-white">
       {!loading && news.length > 0 ? (
         <>
           <div className="w-full grid gap-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 border-none ">
@@ -52,10 +52,10 @@ export default function NewsList({ category }) {
           ))}
           </div>
           </div>
-          <div className="w-3/4 flex mx-auto">
+          <div className="w-3/4 flex justify-center border-none">
             {page > 1 && (
               <button
-                className="p-2 rounded-lg bg-yellow-300 text-black w-max m-3 mb-5 disabled:opacity-80 font-bold"
+                className="bg-black text-white m-4 p-2"
                 onClick={handleBack}
                 disabled={page <= 1 || !news.length}
               >
@@ -64,7 +64,7 @@ export default function NewsList({ category }) {
             )}
             {news.length >= pageSize && (
               <button
-                className="p-2 rounded-lg bg-yellow-300 text-black w-max m-3 mb-5 disabled:opacity-80 font-bold"
+                className="border-2 border-black bg-black text-white m-4 p-2"
                 onClick={handleNext}
                 disabled={news.length < pageSize || !news.length}
               >
