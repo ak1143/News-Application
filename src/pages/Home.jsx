@@ -10,7 +10,7 @@ export default function Home(){
 
     return(
         <div style={{ paddingLeft: '150px', paddingRight: '150px'}}>
-            <NewsList category="cricket" />
+            <NewsList category="sports" />
         </div>
     )
 }
