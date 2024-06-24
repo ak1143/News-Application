@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import FirstPostCard from "../components/PostCard/FirstPostCard"
 import NewsList from "./NewsList"
 
 
@@ -11,7 +10,7 @@ export default function Home(){
 
     return(
         <div style={{ paddingLeft: '150px', paddingRight: '150px'}}>
-            <NewsList category="General" />
+            <NewsList category="cricket" />
         </div>
     )
 }

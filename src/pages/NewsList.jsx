@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import FirstPostCard from "../components/PostCard/FirstPostCard";
 import Spinner from "../components/Spinner/Spinner.jsx";
 import getNews from "../api/getNews.js"
+import SecondPostCard from "../components/PostCard/SecondPostCard.jsx";
 
 export default function NewsList( {category} ){
 
@@ -15,7 +16,7 @@ export default function NewsList( {category} ){
             setLoading(true);
             const data= await getNews(category,page,pageSize);
             setNews(data?.articles);
-            // setLoading(false);
+            setLoading(false);
 
         } catch (error) {
             setLoading(false);
@@ -42,14 +43,24 @@ export default function NewsList( {category} ){
     }, [page]);
 
     return (
-        <div className="w-full flex flex-col items-center bg-gray-900 text-white pt-5 ">
+        <div className="w-full flex flex-col items-center bg-gray-900 text-white ">
           {!loading && news?.length > 0 ? (
             <>
-              <div className="w-11/12 p-3 grid gap-10  grid-cols-1 xsm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 ">
-                {news?.map((article, i) => (
-                  <FirstPostCard article={article} key={i} />
-                ))}
+              <div className="w-full grid gap-10 grid-cols-1 xsm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 border-none">
+                  {/* Conditional rendering based on category */}
+                  {category == 'general' && news.length > 0 ? (
+                    <FirstPostCard article={news[0]} />
+                  ) : (
+                    news.length > 0 ? (
+                      news.map((article, i) => (
+                        <SecondPostCard article={article} key={i} />
+                      ))
+                    ) : (
+                      <p>No news articles available.</p>
+                    )
+                  )}
               </div>
+
               <div className="w-3/4flex mx-auto ">
               {
                 page>1&&
